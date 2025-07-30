@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+//@tailwind base;
+//@tailwind components;
+//@tailwind utilities;
+
+@import "tailwindcss";
+@plugin "daisyui" {
+	themes: light --default, dark, cupcake, bumblebee, emerald, corporate, synthwave, retro, cyberpunk, valentine, halloween, garden, forest, aqua, business, luxury, dracula, fantasy, wireframe, black, acid, cmyk, autumn, winter, acid, acid-dark;
+}
