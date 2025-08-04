@@ -1,0 +1,429 @@
+<div class="p-6 h-screen flex flex-col">
+  <!-- Page Header -->
+  <div class="mb-6 flex-shrink-0">
+    <h1 class="text-2xl font-bold text-gray-900">Products</h1>
+    <p class="text-gray-600 mt-1">Manage your product inventory</p>
+  </div>
+
+  <!-- Table Container -->
+  <div class="bg-white shadow-sm rounded-lg overflow-auto flex-1">
+    <table class="min-w-full divide-y divide-gray-200">
+      <!-- Table Header -->
+      <thead class="bg-gray-50">
+        <tr>
+          <th class="g-th-header">
+            Product
+          </th>
+          <th class="g-th-header">
+            Category
+          </th>
+          <th class="g-th-header">
+            Price
+          </th>
+          <th class="g-th-header">
+            Stock
+          </th>
+          <th class="g-th-header">
+            Status
+          </th>
+          <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">>
+            Actions
+          </th>
+        </tr>
+      </thead>
+
+      <!-- Table Body -->
+      <tbody class="bg-white divide-y divide-gray-200">
+        <!-- Product 1 -->
+        <tr class="hover:bg-gray-50">
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex items-center">
+              <div class="h-10 w-10 bg-gray-200 rounded-lg flex items-center justify-center">
+                <span class="text-gray-500 text-sm font-medium">P1</span>
+              </div>
+              <div class="ml-4">
+                <div class="text-sm font-medium text-gray-900">Wireless Headphones</div>
+                <div class="text-sm text-gray-500">SKU: WH-001</div>
+              </div>
+            </div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Electronics</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$129.99</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">45</td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+              Active
+            </span>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+            <div class="relative inline-block text-left">
+              <button (click)="toggleDropdown(1)" class="text-gray-400 hover:text-gray-600 focus:outline-none cursor-pointer">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+                </svg>
+              </button>
+              <div *ngIf="dropdownOpen === 1" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
+                <div class="py-1">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Edit</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Duplicate</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-red-700 hover:bg-gray-100">Delete</a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Product 2 -->
+        <tr class="hover:bg-gray-50">
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex items-center">
+              <div class="h-10 w-10 bg-gray-200 rounded-lg flex items-center justify-center">
+                <span class="text-gray-500 text-sm font-medium">P2</span>
+              </div>
+              <div class="ml-4">
+                <div class="text-sm font-medium text-gray-900">Gaming Mouse</div>
+                <div class="text-sm text-gray-500">SKU: GM-002</div>
+              </div>
+            </div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Electronics</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$79.99</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">23</td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+              Active
+            </span>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+            <div class="relative inline-block text-left">
+              <button (click)="toggleDropdown(2)" class="text-gray-400 hover:text-gray-600 focus:outline-none cursor-pointer">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+                </svg>
+              </button>
+              <div *ngIf="dropdownOpen === 2" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
+                <div class="py-1">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Edit</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Duplicate</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-red-700 hover:bg-gray-100">Delete</a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Product 3 -->
+        <tr class="hover:bg-gray-50">
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex items-center">
+              <div class="h-10 w-10 bg-gray-200 rounded-lg flex items-center justify-center">
+                <span class="text-gray-500 text-sm font-medium">P3</span>
+              </div>
+              <div class="ml-4">
+                <div class="text-sm font-medium text-gray-900">Mechanical Keyboard</div>
+                <div class="text-sm text-gray-500">SKU: MK-003</div>
+              </div>
+            </div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Electronics</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$159.99</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">12</td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">
+              Low Stock
+            </span>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+            <div class="relative inline-block text-left">
+              <button (click)="toggleDropdown(3)" class="text-gray-400 hover:text-gray-600 focus:outline-none cursor-pointer">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+                </svg>
+              </button>
+              <div *ngIf="dropdownOpen === 3" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
+                <div class="py-1">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Edit</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Duplicate</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-red-700 hover:bg-gray-100">Delete</a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Product 4 -->
+        <tr class="hover:bg-gray-50">
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex items-center">
+              <div class="h-10 w-10 bg-gray-200 rounded-lg flex items-center justify-center">
+                <span class="text-gray-500 text-sm font-medium">P4</span>
+              </div>
+              <div class="ml-4">
+                <div class="text-sm font-medium text-gray-900">USB-C Hub</div>
+                <div class="text-sm text-gray-500">SKU: UH-004</div>
+              </div>
+            </div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Accessories</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$49.99</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">67</td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+              Active
+            </span>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+            <div class="relative inline-block text-left">
+              <button (click)="toggleDropdown(4)" class="text-gray-400 hover:text-gray-600 focus:outline-none cursor-pointer">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+                </svg>
+              </button>
+              <div *ngIf="dropdownOpen === 4" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
+                <div class="py-1">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Edit</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Duplicate</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-red-700 hover:bg-gray-100">Delete</a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Product 5 -->
+        <tr class="hover:bg-gray-50">
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex items-center">
+              <div class="h-10 w-10 bg-gray-200 rounded-lg flex items-center justify-center">
+                <span class="text-gray-500 text-sm font-medium">P5</span>
+              </div>
+              <div class="ml-4">
+                <div class="text-sm font-medium text-gray-900">Laptop Stand</div>
+                <div class="text-sm text-gray-500">SKU: LS-005</div>
+              </div>
+            </div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Accessories</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$89.99</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">34</td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+              Active
+            </span>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+            <div class="relative inline-block text-left">
+              <button (click)="toggleDropdown(5)" class="text-gray-400 hover:text-gray-600 focus:outline-none cursor-pointer">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+                </svg>
+              </button>
+              <div *ngIf="dropdownOpen === 5" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
+                <div class="py-1">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Edit</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Duplicate</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-red-700 hover:bg-gray-100">Delete</a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Product 6 -->
+        <tr class="hover:bg-gray-50">
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex items-center">
+              <div class="h-10 w-10 bg-gray-200 rounded-lg flex items-center justify-center">
+                <span class="text-gray-500 text-sm font-medium">P6</span>
+              </div>
+              <div class="ml-4">
+                <div class="text-sm font-medium text-gray-900">Webcam HD</div>
+                <div class="text-sm text-gray-500">SKU: WC-006</div>
+              </div>
+            </div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Electronics</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$119.99</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">0</td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800">
+              Out of Stock
+            </span>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+            <div class="relative inline-block text-left">
+              <button (click)="toggleDropdown(6)" class="text-gray-400 hover:text-gray-600 focus:outline-none cursor-pointer">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+                </svg>
+              </button>
+              <div *ngIf="dropdownOpen === 6" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
+                <div class="py-1">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Edit</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Duplicate</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-red-700 hover:bg-gray-100">Delete</a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Product 7 -->
+        <tr class="hover:bg-gray-50">
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex items-center">
+              <div class="h-10 w-10 bg-gray-200 rounded-lg flex items-center justify-center">
+                <span class="text-gray-500 text-sm font-medium">P7</span>
+              </div>
+              <div class="ml-4">
+                <div class="text-sm font-medium text-gray-900">Monitor 27"</div>
+                <div class="text-sm text-gray-500">SKU: MN-007</div>
+              </div>
+            </div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Electronics</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$399.99</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">18</td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+              Active
+            </span>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+            <div class="relative inline-block text-left">
+              <button (click)="toggleDropdown(7)" class="text-gray-400 hover:text-gray-600 focus:outline-none cursor-pointer">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+                </svg>
+              </button>
+              <div *ngIf="dropdownOpen === 7" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
+                <div class="py-1">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Edit</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Duplicate</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-red-700 hover:bg-gray-100">Delete</a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Product 8 -->
+        <tr class="hover:bg-gray-50">
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex items-center">
+              <div class="h-10 w-10 bg-gray-200 rounded-lg flex items-center justify-center">
+                <span class="text-gray-500 text-sm font-medium">P8</span>
+              </div>
+              <div class="ml-4">
+                <div class="text-sm font-medium text-gray-900">Desk Lamp LED</div>
+                <div class="text-sm text-gray-500">SKU: DL-008</div>
+              </div>
+            </div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Accessories</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$59.99</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">28</td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+              Active
+            </span>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+            <div class="relative inline-block text-left">
+              <button (click)="toggleDropdown(8)" class="text-gray-400 hover:text-gray-600 focus:outline-none cursor-pointer">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 6a2 2 0 110-4 2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+                </svg>
+              </button>
+              <div *ngIf="dropdownOpen === 8" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
+                <div class="py-1">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Edit</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Duplicate</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-red-700 hover:bg-gray-100">Delete</a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Product 9 -->
+        <tr class="hover:bg-gray-50">
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex items-center">
+              <div class="h-10 w-10 bg-gray-200 rounded-lg flex items-center justify-center">
+                <span class="text-gray-500 text-sm font-medium">P9</span>
+              </div>
+              <div class="ml-4">
+                <div class="text-sm font-medium text-gray-900">Bluetooth Speaker</div>
+                <div class="text-sm text-gray-500">SKU: BS-009</div>
+              </div>
+            </div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Electronics</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$89.99</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">52</td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+              Active
+            </span>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+            <div class="relative inline-block text-left">
+              <button (click)="toggleDropdown(9)" class="text-gray-400 hover:text-gray-600 focus:outline-none cursor-pointer">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+                </svg>
+              </button>
+              <div *ngIf="dropdownOpen === 9" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
+                <div class="py-1">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Edit</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Duplicate</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-red-700 hover:bg-gray-100">Delete</a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Product 10 -->
+        <tr class="hover:bg-gray-50">
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex items-center">
+              <div class="h-10 w-10 bg-gray-200 rounded-lg flex items-center justify-center">
+                <span class="text-gray-500 text-sm font-medium">P10</span>
+              </div>
+              <div class="ml-4">
+                <div class="text-sm font-medium text-gray-900">External SSD 1TB</div>
+                <div class="text-sm text-gray-500">SKU: SSD-010</div>
+              </div>
+            </div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Storage</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$199.99</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">15</td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">
+              Low Stock
+            </span>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+            <div class="relative inline-block text-left">
+              <button (click)="toggleDropdown(10)" class="text-gray-400 hover:text-gray-600 focus:outline-none cursor-pointer">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path>
+                </svg>
+              </button>
+              <div *ngIf="dropdownOpen === 10" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
+                <div class="py-1">
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Edit</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Duplicate</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-red-700 hover:bg-gray-100">Delete</a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

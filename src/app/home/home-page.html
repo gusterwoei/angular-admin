@@ -1,0 +1,147 @@
+<main class="flex-1 overflow-y-auto bg-gray-50 p-6">
+  <div id="contentContainer" class="max-w-7xl mx-auto">
+    <!-- Dashboard Content (Default) -->
+    <div id="dashboard" class="content-section">
+      <div class="mb-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">
+          Welcome back, John!
+        </h2>
+        <p class="text-gray-600">
+          Here's what's happening with your admin portal today.
+        </p>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="flex items-center">
+            <div class="p-2 bg-blue-100 rounded-lg">
+              <i data-lucide="users" class="w-6 h-6 text-blue-600"></i>
+            </div>
+            <div class="ml-4">
+              <p class="text-sm font-medium text-gray-600">Total Users</p>
+              <p class="text-2xl font-bold text-gray-900">1,234</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="flex items-center">
+            <div class="p-2 bg-green-100 rounded-lg">
+              <i data-lucide="shopping-cart" class="w-6 h-6 text-green-600"></i>
+            </div>
+            <div class="ml-4">
+              <p class="text-sm font-medium text-gray-600">Orders</p>
+              <p class="text-2xl font-bold text-gray-900">567</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="flex items-center">
+            <div class="p-2 bg-yellow-100 rounded-lg">
+              <i data-lucide="package" class="w-6 h-6 text-yellow-600"></i>
+            </div>
+            <div class="ml-4">
+              <p class="text-sm font-medium text-gray-600">Products</p>
+              <p class="text-2xl font-bold text-gray-900">89</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="flex items-center">
+            <div class="p-2 bg-purple-100 rounded-lg">
+              <i data-lucide="dollar-sign" class="w-6 h-6 text-purple-600"></i>
+            </div>
+            <div class="ml-4">
+              <p class="text-sm font-medium text-gray-600">Revenue</p>
+              <p class="text-2xl font-bold text-gray-900">$12.3k</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="bg-white rounded-lg shadow">
+        <div class="px-6 py-4 border-b border-gray-200">
+          <h3 class="text-lg font-medium text-gray-900">Recent Activity</h3>
+        </div>
+        <div class="p-6">
+          <div class="space-y-4">
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+              <p class="text-sm text-gray-600">
+                New user registered: jane.doe&example.com
+              </p>
+              <span class="text-xs text-gray-400">2 minutes ago</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
+              <p class="text-sm text-gray-600">
+                Order #1234 has been processed
+              </p>
+              <span class="text-xs text-gray-400">5 minutes ago</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
+              <p class="text-sm text-gray-600">Product inventory updated</p>
+              <span class="text-xs text-gray-400">10 minutes ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other Content Sections (Hidden by default) -->
+    <div id="users" class="content-section hidden">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">User Management</h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600">
+          User management content will be displayed here.
+        </p>
+      </div>
+    </div>
+
+    <div id="analytics" class="content-section hidden">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Analytics</h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600">Analytics content will be displayed here.</p>
+      </div>
+    </div>
+
+    <div id="products" class="content-section hidden">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Products</h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600">Products content will be displayed here.</p>
+      </div>
+    </div>
+
+    <div id="orders" class="content-section hidden">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Orders</h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600">Orders content will be displayed here.</p>
+      </div>
+    </div>
+
+    <div id="reports" class="content-section hidden">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Reports</h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600">Reports content will be displayed here.</p>
+      </div>
+    </div>
+
+    <div id="settings" class="content-section hidden">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Settings</h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600">Settings content will be displayed here.</p>
+      </div>
+    </div>
+
+    <div id="help" class="content-section hidden">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Help & Support</h2>
+      <div class="bg-white rounded-lg shadow p-6">
+        <p class="text-gray-600">
+          Help and support content will be displayed here.
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
