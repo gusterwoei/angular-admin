@@ -22,4 +22,7 @@
   .g-badge-alert {
 	@apply inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800;
   }
+  .g-btn-primary {
+    @apply bg-blue-500 text-white hover:bg-blue-600 px-4 py-2 rounded-lg shadow transition cursor-pointer;
+  }
 }
