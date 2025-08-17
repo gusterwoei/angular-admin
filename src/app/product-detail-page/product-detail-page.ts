@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { LucideAngularModule } from 'lucide-angular';
+import { icCheck, icDelete, icHome } from '../common/icons';
+import { Toast } from "../components/toast/toast";
 
 type Product = {
   id: number;
@@ -13,11 +16,15 @@ type Product = {
 
 @Component({
   selector: 'app-product-detail-page',
-  imports: [ReactiveFormsModule, RouterModule],
+  imports: [ReactiveFormsModule, RouterModule, LucideAngularModule, Toast],
   templateUrl: './product-detail-page.html',
   styleUrl: './product-detail-page.scss'
 })
 export class ProductDetailPage {
+  icons = {
+    icClose: icDelete,
+    icCheck: icCheck,
+  };
   productForm: FormGroup;
   countries = [
     'United States',
