@@ -2,10 +2,11 @@ import { Component, OnInit, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LucideAngularModule } from 'lucide-angular';
 import * as AppIcons from './common/icons';
+import { Toast } from "./components/toast/toast";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterModule, LucideAngularModule],
+  imports: [RouterModule, LucideAngularModule, Toast],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { LucideAngularModule } from 'lucide-angular';
 import { icCheck, icError, icInfo } from '../../common/icons';
+import { ToastService } from '../../services/toast-service';
 
 @Component({
   selector: 'toast',
@@ -28,26 +29,40 @@ import { icCheck, icError, icInfo } from '../../common/icons';
 
   `,
 })
-export class Toast {
+export class Toast implements OnInit {
   @Input() icon: 'success' | 'error' | 'info' = 'success';
   @Input() title = '';
   @Input() message = '';
   @Input() duration = 3000;
-  visible = true;
+  visible = false;
+  timeoutId: any;
   icons = {
     icCheck: icCheck,
     icError: icError,
     icInfo: icInfo,
   }
 
+  constructor(private toastService: ToastService) { }
+
   ngOnInit() {
-    if (this.duration > 0) {
-      setTimeout(() => this.close(), this.duration);
-    }
+    // if (this.duration > 0) {
+    //   setTimeout(() => this.close(), this.duration);
+    // }
+    this.toastService.toast$.subscribe(toast => {
+      if (toast) {
+        this.title = toast.title;
+        this.message = toast.message;
+        this.visible = true;
+
+        clearTimeout(this.timeoutId);
+        this.timeoutId = setTimeout(() => this.close(), toast.duration || 3000);
+      }
+    });
   }
 
   close() {
     this.visible = false;
+    this.toastService.clear();
   }
 
   getIcons() {

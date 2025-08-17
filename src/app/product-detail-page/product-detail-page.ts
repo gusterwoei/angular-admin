@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LucideAngularModule } from 'lucide-angular';
-import { icCheck, icDelete, icHome } from '../common/icons';
-import { Toast } from "../components/toast/toast";
+import { icCheck, icDelete } from '../common/icons';
+import { ToastService } from '../services/toast-service';
+import { ProductService } from '../services/product-service';
 
 type Product = {
   id: number;
@@ -16,41 +17,25 @@ type Product = {
 
 @Component({
   selector: 'app-product-detail-page',
-  imports: [ReactiveFormsModule, RouterModule, LucideAngularModule, Toast],
+  imports: [ReactiveFormsModule, RouterModule, LucideAngularModule],
   templateUrl: './product-detail-page.html',
   styleUrl: './product-detail-page.scss'
 })
-export class ProductDetailPage {
+export class ProductDetailPage implements OnInit {
   icons = {
     icClose: icDelete,
     icCheck: icCheck,
   };
   productForm: FormGroup;
-  countries = [
-    'United States',
-    'Canada',
-    'United Kingdom',
-    'Germany',
-    'France',
-    'Japan',
-    'Australia'
-  ];
-  categories = [
-    { value: 'life', label: 'Life' },
-    { value: 'health', label: 'Health' },
-    { value: 'auto', label: 'Auto' },
-    { value: 'home', label: 'Home' },
-    { value: 'travel', label: 'Travel' },
-    { value: 'pnc', label: 'Property and Casualty' }
-  ];
+  countries: string[] = [];
+  categories: { value: string; label: string }[] = [];
+  statuses: { value: string; label: string }[] = [];
 
-  statuses = [
-    { value: 'active', label: 'Active' },
-    { value: 'pending', label: 'Pending' },
-    { value: 'inactive', label: 'Inactive' }
-  ];
-
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private readonly fb: FormBuilder,
+    private readonly toastService: ToastService,
+    private readonly productService: ProductService,
+  ) {
     this.productForm = this.fb.group({
       id: [0, Validators.required],
       name: ['', Validators.required],
@@ -61,9 +46,20 @@ export class ProductDetailPage {
     });
   }
 
+  async ngOnInit(): Promise<void> {
+    this.countries = await this.productService.getCountries();
+    this.categories = await this.productService.getCategories();
+    this.statuses = await this.productService.getStatuses();
+  }
+
   onSubmit() {
     if (this.productForm.valid) {
       console.log('Product Form Data:', this.productForm.value);
     }
+    this.toastService.show({
+      title: 'Product Saved',
+      message: 'The product has been saved successfully.',
+      duration: 3000
+    });
   }
 }

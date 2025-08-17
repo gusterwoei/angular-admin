@@ -78,4 +78,35 @@ export class ProductService {
       }
     ]);
   }
+
+  async getCountries(): Promise<string[]> {
+    return Promise.resolve([
+      'United States',
+      'Canada',
+      'United Kingdom',
+      'Germany',
+      'France',
+      'Japan',
+      'Australia'
+    ]);
+  }
+
+  async getCategories(): Promise<{ value: string; label: string }[]> {
+    return Promise.resolve([
+      { value: 'life', label: 'Life' },
+      { value: 'health', label: 'Health' },
+      { value: 'auto', label: 'Auto' },
+      { value: 'home', label: 'Home' },
+      { value: 'travel', label: 'Travel' },
+      { value: 'pnc', label: 'Property and Casualty' }
+    ]);
+  }
+
+  async getStatuses(): Promise<{ value: string; label: string }[]> {
+    return Promise.resolve([
+      { value: 'active', label: 'Active' },
+      { value: 'pending', label: 'Pending' },
+      { value: 'inactive', label: 'Inactive' }
+    ]);
+  }
 }
