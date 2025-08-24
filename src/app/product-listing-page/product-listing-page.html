@@ -97,29 +97,10 @@
                   >
                   <span
                     class="block px-4 py-2 text-sm text-red-700 hover:bg-gray-100 cursor-pointer"
-                    onclick="delete_modal.showModal()"
+                    (click)="showDeleteDialog(product.id)"
                     >Delete
                   </span>
                 </div>
-
-                <!-- delete modal -->
-                <dialog id="delete_modal" class="modal">
-                  <div class="modal-box">
-                    <h3 class="text-lg font-bold">Hello!</h3>
-                    <p class="py-4">Do you want to delete this product?</p>
-                    <div class="modal-action">
-                      <form method="dialog">
-                        <button
-                          class="btn btn-error text-white mr-3"
-                          (click)="deleteProduct(product.id)"
-                        >
-                          Delete
-                        </button>
-                        <button class="btn">Close</button>
-                      </form>
-                    </div>
-                  </div>
-                </dialog>
               </div>
             </div>
           </td>
@@ -129,3 +110,11 @@
     </table>
   </div>
 </div>
+
+<!-- Dialog Templates -->
+<ng-template #deleteProductDialog>
+  <h3 class="text-lg font-bold">Confirm Delete</h3>
+  <p class="py-4">
+    Do you want to delete the product "{{ selectedProduct?.name }}"?
+  </p>
+</ng-template>

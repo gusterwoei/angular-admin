@@ -1,9 +1,10 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, ViewContainerRef, TemplateRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductService } from '../services/product-service';
 import { LucideAngularModule } from "lucide-angular";
 import { icAdd } from '../common/icons';
 import { RouterModule } from '@angular/router';
+import { DialogService } from '../services/dialog-service';
 
 @Component({
   selector: 'app-product-listing-page',
@@ -18,7 +19,15 @@ export class ProductListingPage {
     icAdd: icAdd,
   };
 
-  constructor(private readonly productService: ProductService) {
+  @ViewChild('deleteProductDialog', { read: TemplateRef })
+  deleteProductDialog!: TemplateRef<any>;
+  selectedProduct: Product | null = null;
+
+  constructor(
+    private readonly productService: ProductService,
+    private readonly dialogService: DialogService,
+    private readonly viewContainerRef: ViewContainerRef
+  ) {
     this.loadProducts();
   }
 
@@ -41,6 +50,25 @@ export class ProductListingPage {
       default:
         return 'g-badge-active';
     }
+  }
+
+  async showDeleteDialog(productId: number) {
+    this.selectedProduct = this.products.find(p => p.id === productId) || null;
+
+    await this.dialogService.show({
+      content: this.deleteProductDialog,
+      buttons: [
+        {
+          label: 'Delete',
+          action: () => this.deleteProduct(productId),
+          class: 'btn-error text-white mr-3'
+        },
+        {
+          label: 'Close',
+          action: () => { }
+        }
+      ]
+    }, this.viewContainerRef);
   }
 
   deleteProduct(productId: number) {
