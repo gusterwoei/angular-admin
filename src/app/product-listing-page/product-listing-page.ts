@@ -4,7 +4,7 @@ import { ProductService } from '../services/product-service';
 import { LucideAngularModule } from "lucide-angular";
 import { icAdd } from '../common/icons';
 import { RouterModule } from '@angular/router';
-import { DialogService } from '../services/dialog-service';
+import { DialogService } from '../components/dialog/dialog';
 
 @Component({
   selector: 'app-product-listing-page',
