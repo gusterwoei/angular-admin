@@ -4,7 +4,7 @@ import { ProductService } from '../services/product-service';
 import { LucideAngularModule } from "lucide-angular";
 import { icAdd } from '../common/icons';
 import { RouterModule } from '@angular/router';
-import { DialogService } from '../components/dialog/dialog';
+import { DialogService } from '../../lib/dialog/dialog-service';
 
 @Component({
   selector: 'app-product-listing-page',
@@ -19,7 +19,7 @@ export class ProductListingPage {
     icAdd: icAdd,
   };
 
-  @ViewChild('deleteProductDialog', { read: TemplateRef })
+  @ViewChild('deleteProductDialog')
   deleteProductDialog!: TemplateRef<any>;
   selectedProduct: Product | null = null;
 

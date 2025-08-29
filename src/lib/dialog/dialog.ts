@@ -1,16 +1,5 @@
-import { Component, Input, Output, EventEmitter, TemplateRef, ViewChild, ElementRef, ComponentRef, Injectable, ViewContainerRef } from '@angular/core';
+import { Component, Input, Output, EventEmitter, TemplateRef, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-export interface DialogButton {
-  label: string;
-  action: () => void;
-  class?: string;
-}
-
-export interface DialogConfig {
-  content: TemplateRef<any>;
-  buttons: DialogButton[];
-}
 
 @Component({
   selector: 'app-dialog',
@@ -62,29 +51,13 @@ export class Dialog {
   }
 }
 
-@Injectable({ providedIn: 'root' })
-export class DialogService {
-  private dialogRef: ComponentRef<Dialog> | null = null;
+export interface DialogButton {
+  label: string;
+  action: () => void;
+  class?: string;
+}
 
-  constructor() { }
-
-  show(config: DialogConfig, viewContainerRef: ViewContainerRef): Promise<void> {
-    return new Promise((resolve) => {
-      this.dialogRef = viewContainerRef.createComponent(Dialog);
-      this.dialogRef.instance.config = config;
-      this.dialogRef.instance.closed.subscribe(() => {
-        this.close();
-        resolve();
-      });
-
-      this.dialogRef.instance.show();
-    });
-  }
-
-  close() {
-    if (this.dialogRef) {
-      this.dialogRef.destroy();
-      this.dialogRef = null;
-    }
-  }
+export interface DialogConfig {
+  content: TemplateRef<any>;
+  buttons: DialogButton[];
 }
